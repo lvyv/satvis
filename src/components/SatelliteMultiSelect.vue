@@ -3,6 +3,7 @@
     <multi-select
       v-model="values"
       search
+      search-placeholder="搜索..."
       history-button
       :filters="filters"
       :options="options"
@@ -33,11 +34,11 @@ export default {
   },
   data() {
     return {
-      btnLabel: () => `Enabled satellites (${cc.sats.enabledSatellites.length})`,
+      btnLabel: () => `可用备选卫星数量 (${cc.sats.enabledSatellites.length})`,
       values: [],
       data: cc.sats.satlist,
       filters: [{
-        nameAll: "Select all",
+        nameAll: "全部选择",
         nameNotAll: "Deselect all",
         func() {
           return true;

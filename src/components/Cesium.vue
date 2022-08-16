@@ -2,28 +2,28 @@
   <div class="cesium">
     <div v-if="showUI" id="toolbarLeft">
       <div class="toolbarButtons">
-        <b-tooltip label="Satellite selection" :triggers="tooltipTriggers" position="is-right">
+        <b-tooltip label="选择卫星" :triggers="tooltipTriggers" position="is-right">
           <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleMenu('cat')">
             <span class="icon fill-parent">
               <i class="svg-sat"></i>
             </span>
           </button>
         </b-tooltip>
-        <b-tooltip label="Satellite elements" :triggers="tooltipTriggers" position="is-right">
+        <b-tooltip label="卫星属性" :triggers="tooltipTriggers" position="is-right">
           <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleMenu('sat')">
             <span class="icon fill-parent">
               <i class="fas fa-layer-group fa-fw mfa-button-width"></i>
             </span>
           </button>
         </b-tooltip>
-        <b-tooltip label="Ground station" :triggers="tooltipTriggers" position="is-right">
+        <b-tooltip label="地面观测站" :triggers="tooltipTriggers" position="is-right">
           <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleMenu('gs')">
             <span class="icon fill-parent">
               <i class="svg-groundstation"></i>
             </span>
           </button>
         </b-tooltip>
-        <b-tooltip label="Map" :triggers="tooltipTriggers" position="is-right">
+        <b-tooltip label="地图" :triggers="tooltipTriggers" position="is-right">
           <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleMenu('map')">
             <span class="icon fill-parent">
               <i class="fas fa-globe-africa fa-fw mfa-button-width"></i>
@@ -37,7 +37,7 @@
             </span>
           </button>
         </b-tooltip>
-        <b-tooltip label="Debug" :triggers="tooltipTriggers" position="is-right">
+        <b-tooltip label="调试" :triggers="tooltipTriggers" position="is-right">
           <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleMenu('dbg')">
             <span class="icon fill-parent">
               <i class="fas fa-hammer fa-fw mfa-button-width"></i>
@@ -47,19 +47,19 @@
       </div>
       <div v-show="menu.cat" class="toolbarSwitches">
         <div class="toolbarTitle">
-          Tracked satellite
+          跟踪的卫星
         </div>
         <div class="toolbarContent">
           <satellite-select ref="SatelliteSelect" />
         </div>
         <div class="toolbarTitle">
-          Enabled satellites
+          可用备选卫星
         </div>
         <div class="toolbarContent">
           <satellite-multi-select ref="SatelliteMultiSelect" />
         </div>
         <div class="toolbarTitle">
-          Monitored satellites
+          当前关注卫星
         </div>
         <div class="toolbarContent">
           <satellite-notify-multi-select ref="SatelliteNotifyMultiSelect" />
@@ -67,7 +67,7 @@
       </div>
       <div v-show="menu.sat" class="toolbarSwitches">
         <div class="toolbarTitle">
-          Satellite elements
+          卫星属性
         </div>
         <label v-for="componentName in cc.sats.components" :key="componentName" class="toolbarSwitch">
           <input v-model="enabledComponents" type="checkbox" :value="componentName">
@@ -83,20 +83,20 @@
       </div>
       <div v-show="menu.gs" class="toolbarSwitches">
         <div class="toolbarTitle">
-          Ground station
+          地面观测站
         </div>
         <label class="toolbarSwitch">
           <input v-model="groundStationPicker.enabled" type="checkbox">
           <span class="slider"></span>
-          Pick on globe
+          球面点选
         </label>
         <label class="toolbarSwitch">
           <input type="button" @click="cc.setGroundStationFromGeolocation()">
-          Set from geolocation
+          当前地理位置
         </label>
         <label class="toolbarSwitch">
           <input type="button" @click="cc.sats.focusGroundStation()">
-          Focus
+          焦点
         </label>
       </div>
       <div v-show="menu.map" class="toolbarSwitches">
@@ -162,7 +162,7 @@
       </div>
       <div v-show="menu.dbg" class="toolbarSwitches">
         <div class="toolbarTitle">
-          Debug
+          调试
         </div>
         <label class="toolbarSwitch">
           <input v-model="cc.viewer.scene.debugShowFramesPerSecond" type="checkbox">
@@ -196,23 +196,24 @@
         </label>
         <label class="toolbarSwitch">
           <input type="button" @click="cc.jumpTo('Everest')">
-          Jump to Everest
+          珠穆朗玛峰
         </label>
         <label class="toolbarSwitch">
           <input type="button" @click="cc.jumpTo('HalfDome')">
-          Jump to HalfDome
+          半穹顶
         </label>
       </div>
     </div>
     <div id="toolbarRight">
-      <b-tooltip v-if="showUI" label="Github" :triggers="tooltipTriggers" position="is-left">
+      <!--<b-tooltip v-if="showUI" label="Github" :triggers="tooltipTriggers" position="is-left">
         <a class="cesium-button cesium-toolbar-button" href="https://github.com/Flowm/satvis/" target="_blank" rel="noopener">
           <span class="icon fill-parent">
             <i class="fab fa-github fa-fw mfa-button-width"></i>
           </span>
         </a>
+        -->
       </b-tooltip>
-      <b-tooltip label="Toggle UI" :triggers="tooltipTriggers" position="is-left">
+      <b-tooltip label="切换菜单项" :triggers="tooltipTriggers" position="is-left">
         <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleUI">
           <span class="icon fill-parent">
             <i class="fas fa-eye fa-fw mfa-button-width"></i>

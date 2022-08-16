@@ -24,16 +24,16 @@ window.app = app;
 /* global cc */
 // cc.sats.addFromTleUrl("data/tle/norad/active.txt", ["Active"]);
 cc.sats.addFromTleUrl("data/tle/norad/spire.txt", ["Spire"]);
-cc.sats.addFromTleUrl("data/tle/norad/planet.txt", ["Planet"]);
+cc.sats.addFromTleUrl("data/tle/norad/planet.txt", ["行星公司"]);
 cc.sats.addFromTleUrl("data/tle/norad/starlink.txt", ["Starlink"]);
-cc.sats.addFromTleUrl("data/tle/norad/globalstar.txt", ["Globalstar"]);
-cc.sats.addFromTleUrl("data/tle/norad/resource.txt", ["Resource"]);
-cc.sats.addFromTleUrl("data/tle/norad/science.txt", ["Science"]);
-cc.sats.addFromTleUrl("data/tle/norad/stations.txt", ["Stations"]);
-cc.sats.addFromTleUrl("data/tle/norad/weather.txt", ["Weather"]);
-cc.sats.addFromTleUrl("data/tle/norad/tle-new.txt", ["New"]);
+cc.sats.addFromTleUrl("data/tle/norad/globalstar.txt", ["卫通（美）"]);
+cc.sats.addFromTleUrl("data/tle/norad/resource.txt", ["资源"]);
+cc.sats.addFromTleUrl("data/tle/norad/science.txt", ["科学"]);
+cc.sats.addFromTleUrl("data/tle/norad/stations.txt", ["空间站"]);
+cc.sats.addFromTleUrl("data/tle/norad/weather.txt", ["气象"]);
+cc.sats.addFromTleUrl("data/tle/ext/move.txt", ["MOVE（德）"]);
+cc.sats.addFromTleUrl("data/tle/norad/tle-new.txt", ["近期"]);
 
-cc.sats.addFromTleUrl("data/tle/ext/move.txt", ["MOVE"]);
 if (cc.sats.enabledTags.length === 0) {
   cc.sats.enableTag("MOVE");
 }

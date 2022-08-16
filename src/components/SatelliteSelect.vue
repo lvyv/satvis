@@ -3,6 +3,7 @@
     <multi-select
       v-model="values"
       search
+      search-placeholder="搜索..."
       history-button
       :options="options"
       :select-options="data"
@@ -32,7 +33,7 @@ export default {
   },
   data() {
     return {
-      btnLabel: (values) => (values.length > 0 ? values[0] : "Select..."),
+      btnLabel: (values) => (values.length > 0 ? values[0] : "选择..."),
       values: [],
       data: cc.sats.satlist,
       options: {

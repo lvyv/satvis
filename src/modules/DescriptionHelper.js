@@ -7,15 +7,15 @@ export class DescriptionHelper {
   static renderDescription(time, name, position, passes, isGroundStation, tle) {
     const description = `
       <div class="ib">
-        <h3>Position</h3>
+        <h3>位置</h3>
         <table class="ibt">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Latitude</th>
-              <th>Longitude</th>
-              ${isGroundStation ? "" : "<th>Altitude</th>"}
-              ${isGroundStation ? "" : "<th>Velocity</th>"}
+              <th>卫星</th>
+              <th>纬度</th>
+              <th>经度</th>
+              ${isGroundStation ? "" : "<th>高度</th>"}
+              ${isGroundStation ? "" : "<th>速度</th>"}
             </tr>
           </thead>
           <tbody>
@@ -38,7 +38,7 @@ export class DescriptionHelper {
   static renderPasses(passes, time, showPassName) {
     if (passes.length === 0) {
       const html = `
-        <h3>Passes</h3>
+        <h3>经过</h3>
         <div class="ib-text">No ground station set</div>
         `;
       return html;
@@ -53,16 +53,16 @@ export class DescriptionHelper {
 
     const htmlName = showPassName ? "<th>Name</th>\n" : "";
     const html = `
-      <h3>Passes</h3>
+      <h3>经过</h3>
       <table class="ibt">
         <thead>
           <tr>
             ${htmlName}
-            <th>Countdown</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>El</th>
-            <th>Az</th>
+            <th>倒计时</th>
+            <th>开始</th>
+            <th>结束</th>
+            <th>高度角（El）</th>
+            <th>方位角（Az）</th>
           </tr>
         </thead>
         <tbody>

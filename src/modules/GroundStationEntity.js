@@ -10,7 +10,7 @@ export class GroundStationEntity extends CesiumEntityWrapper {
     super(viewer);
     this.sats = sats;
 
-    this.name = "Ground station";
+    this.name = "地面观测站";
     this.position = position;
 
     this.createEntities();
