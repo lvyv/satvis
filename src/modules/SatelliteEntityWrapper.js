@@ -94,7 +94,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       pixelSize: 10,
       color: Cesium.Color.WHITE,
     });
-    this.createCesiumSatelliteEntity("Point", "point", point);
+    this.createCesiumSatelliteEntity("点（Point）", "point", point);
   }
 
   createBox() {
@@ -112,7 +112,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       minimumPixelSize: 50,
       maximumScale: 10000,
     });
-    this.createCesiumSatelliteEntity("3D model", "model", model);
+    this.createCesiumSatelliteEntity("卫星模型（3D model）", "model", model);
   }
 
   createLabel() {
@@ -124,7 +124,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       distanceDisplayCondition: new Cesium.DistanceDisplayCondition(10000, 6.0e7),
       pixelOffsetScaleByDistance: new Cesium.NearFarScalar(1e1, 10, 2e5, 1),
     });
-    this.createCesiumSatelliteEntity("Label", "label", label);
+    this.createCesiumSatelliteEntity("标签", "label", label);
   }
 
   createOrbit() {
@@ -135,7 +135,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       resolution: 600,
       width: 2,
     });
-    this.createCesiumEntity("Orbit", "path", path, this.props.name, this.description, this.props.sampledPositionInertial, true);
+    this.createCesiumEntity("卫星轨道（Orbit）", "path", path, this.props.name, this.description, this.props.sampledPositionInertial, true);
   }
 
   createOrbitTrack(leadTime = this.props.orbit.orbitalPeriod * 60, trailTime = 0) {
@@ -146,7 +146,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       resolution: 600,
       width: 2,
     });
-    this.createCesiumSatelliteEntity("Orbit track", "path", path);
+    this.createCesiumSatelliteEntity("卫星遥测轨迹（Orbit track）", "path", path);
   }
 
   createGroundTrack() {
@@ -156,7 +156,7 @@ export class SatelliteEntityWrapper extends CesiumEntityWrapper {
       followSurface: false,
       width: 10,
     });
-    this.createCesiumSatelliteEntity("Ground track", "polyline", polyline);
+    this.createCesiumSatelliteEntity("地面投影（Ground track）", "polyline", polyline);
   }
 
   createCone(fov = 10) {

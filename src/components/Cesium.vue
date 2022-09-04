@@ -211,8 +211,8 @@
             <i class="fab fa-github fa-fw mfa-button-width"></i>
           </span>
         </a>
-        -->
-      </b-tooltip>
+      </b-tooltip> 
+      -->
       <b-tooltip label="切换菜单项" :triggers="tooltipTriggers" position="is-left">
         <button type="button" class="cesium-button cesium-toolbar-button" @click="toggleUI">
           <span class="icon fill-parent">
