@@ -100,6 +100,14 @@ module.exports = {
       // Cesium module name
       Cesium: path.resolve(basePath, cesiumSource),
     },
+    fallback:  {
+      "http": require.resolve("stream-http") ,
+      "https": require.resolve("https-browserify"),
+      "zlib": require.resolve("browserify-zlib"),
+      "url": require.resolve("url/"),
+      "assert": require.resolve("assert/"),
+      "stream": require.resolve("stream-browserify")
+    }
   },
   optimization: {
     splitChunks: {
