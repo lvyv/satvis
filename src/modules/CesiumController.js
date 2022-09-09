@@ -45,7 +45,7 @@ export class CesiumController {
     );
     const timeStepInSeconds = 30;
     const totalSeconds = timeStepInSeconds * (flightData.length - 1);
-    const start = Cesium.JulianDate.fromIso8601("2022-09-04T23:10:00Z");
+    const start = Cesium.JulianDate.fromIso8601("2022-09-09T23:10:00Z");
     const stop = Cesium.JulianDate.addSeconds(start, totalSeconds, new Cesium.JulianDate());
     const positionProperty = new Cesium.SampledPositionProperty();
 

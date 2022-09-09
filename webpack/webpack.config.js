@@ -182,7 +182,7 @@ module.exports = {
     new WorkboxPlugin.InjectManifest({
       swSrc: "./src/sw.js",
       swDest: "sw.js",
-      maximumFileSizeToCacheInBytes: 5000000,
+      maximumFileSizeToCacheInBytes: 500000000,
       include: [
         /\.css$/,
         /\.html$/,
