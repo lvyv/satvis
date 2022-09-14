@@ -45,7 +45,8 @@ export class CesiumController {
     );
     const timeStepInSeconds = 30;
     const totalSeconds = timeStepInSeconds * (flightData.length - 1);
-    const start = Cesium.JulianDate.fromIso8601("2022-09-09T23:10:00Z");
+    let sDate = (new Date()).toISOString()
+    const start = Cesium.JulianDate.fromIso8601(sDate);
     const stop = Cesium.JulianDate.addSeconds(start, totalSeconds, new Cesium.JulianDate());
     const positionProperty = new Cesium.SampledPositionProperty();
 
@@ -69,7 +70,7 @@ export class CesiumController {
     // STEP 6 CODE (airplane entity)
     async function loadModel() {
       // Load the glTF model from Cesium ion.
-      const airplaneUri = './data/models/F-16D.gltf';
+      const airplaneUri = './data/models/f16_flames.glb';
       const airplaneEntity = viewer.entities.add({
         name: 'F-16D战斗机',
         availability: new Cesium.TimeIntervalCollection([ new Cesium.TimeInterval({ start: start, stop: stop }) ]),
